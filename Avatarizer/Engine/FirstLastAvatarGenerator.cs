@@ -111,13 +111,13 @@
     {
       var styles = new List<AvatarStyle>
         {
-          new AvatarStyle { BackgroundColor = Color.OrangeRed, TextColor = Color.Black },
-          new AvatarStyle { BackgroundColor = Color.Orange, TextColor = Color.Black },
-          new AvatarStyle { BackgroundColor = Color.Purple, TextColor = Color.Black },
-          new AvatarStyle { BackgroundColor = Color.DarkSlateGray, TextColor = Color.Black },
-          new AvatarStyle { BackgroundColor = Color.Green, TextColor = Color.Black },
-          new AvatarStyle { BackgroundColor = Color.Gold, TextColor = Color.Black },
-          new AvatarStyle { BackgroundColor = Color.DodgerBlue, TextColor = Color.Black }
+          new AvatarStyle { BackgroundColor = Color.OrangeRed, TextColor = Color.White },
+          new AvatarStyle { BackgroundColor = Color.Orange, TextColor = Color.White },
+          new AvatarStyle { BackgroundColor = Color.Purple, TextColor = Color.White },
+          new AvatarStyle { BackgroundColor = Color.DarkSlateGray, TextColor = Color.White },
+          new AvatarStyle { BackgroundColor = Color.Green, TextColor = Color.White },
+          new AvatarStyle { BackgroundColor = Color.Gold, TextColor = Color.White },
+          new AvatarStyle { BackgroundColor = Color.DodgerBlue, TextColor = Color.White }
         };
 
       var avatarText = this.GetText();
