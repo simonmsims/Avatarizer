@@ -1,11 +1,11 @@
-﻿namespace Avatarizer.Engine
+﻿namespace Avatarizer
 {
   using System.Drawing;
 
   /// <summary>
   /// Avatar style.
   /// </summary>
-  internal class AvatarStyle
+  public class AvatarStyle
   {
     /// <summary>
     /// Gets or sets avatar's background color.

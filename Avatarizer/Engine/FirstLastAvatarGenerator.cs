@@ -109,16 +109,7 @@
     /// <returns>Avatar style.</returns>
     private AvatarStyle GetStyle()
     {
-      var styles = new List<AvatarStyle>
-        {
-          new AvatarStyle { BackgroundColor = Color.OrangeRed, TextColor = Color.White },
-          new AvatarStyle { BackgroundColor = Color.Orange, TextColor = Color.White },
-          new AvatarStyle { BackgroundColor = Color.Purple, TextColor = Color.White },
-          new AvatarStyle { BackgroundColor = Color.DarkSlateGray, TextColor = Color.White },
-          new AvatarStyle { BackgroundColor = Color.Green, TextColor = Color.White },
-          new AvatarStyle { BackgroundColor = Color.Gold, TextColor = Color.White },
-          new AvatarStyle { BackgroundColor = Color.DodgerBlue, TextColor = Color.White }
-        };
+      var styles = this.Options.Styles;
 
       var avatarText = this.GetText();
       var characters = avatarText.ToCharArray();

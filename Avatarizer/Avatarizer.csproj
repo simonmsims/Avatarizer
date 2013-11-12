@@ -42,7 +42,7 @@
   <ItemGroup>
     <Compile Include="AvatarFactory.cs" />
     <Compile Include="AvatarGeneratorType.cs" />
-    <Compile Include="Engine\AvatarStyle.cs" />
+    <Compile Include="AvatarStyle.cs" />
     <Compile Include="Engine\FirstLastAvatarGenerator.cs" />
     <Compile Include="Engine\AvatarGeneratorAbstract.cs" />
     <Compile Include="AvatarOptions.cs" />
