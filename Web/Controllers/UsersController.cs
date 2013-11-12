@@ -4,7 +4,7 @@
   using System.Drawing;
   using System.Web.Mvc;
 
-  using Avatarizer.Generator;
+  using Avatarizer;
 
   public class UsersController : Controller
   {

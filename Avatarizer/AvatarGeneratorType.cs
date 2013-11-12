@@ -1,4 +1,4 @@
-﻿namespace Avatarizer.Generator
+﻿namespace Avatarizer
 {
   /// <summary>
   /// Type of avatar generator.

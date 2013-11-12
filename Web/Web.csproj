@@ -142,9 +142,9 @@
     <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Avatarizer.Generator\Avatarizer.Generator.csproj">
+    <ProjectReference Include="..\Avatarizer\Avatarizer.csproj">
       <Project>{1630f7b7-1115-4831-b4ec-679ae200680b}</Project>
-      <Name>Avatarizer.Generator</Name>
+      <Name>Avatarizer</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

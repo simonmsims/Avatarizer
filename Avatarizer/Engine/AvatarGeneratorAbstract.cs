@@ -1,4 +1,4 @@
-﻿namespace Avatarizer.Generator.Engine
+﻿namespace Avatarizer.Engine
 {
   using System;
   using System.Drawing;

@@ -1,8 +1,8 @@
-﻿namespace Avatarizer.Generator
+﻿namespace Avatarizer
 {
   using System;
 
-  using Avatarizer.Generator.Engine;
+  using Avatarizer.Engine;
 
   /// <summary>
   /// Avatar generator factory.

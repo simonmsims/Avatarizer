@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web", "Avatarizer\Web.csproj", "{22C26D50-B862-4E14-9EB1-0F96C1688BC6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web", "Web\Web.csproj", "{22C26D50-B862-4E14-9EB1-0F96C1688BC6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Avatarizer.Generator", "Avatarizer.Generator\Avatarizer.Generator.csproj", "{1630F7B7-1115-4831-B4EC-679AE200680B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Avatarizer", "Avatarizer\Avatarizer.csproj", "{1630F7B7-1115-4831-B4EC-679AE200680B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
