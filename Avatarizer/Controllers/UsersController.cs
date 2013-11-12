@@ -4,40 +4,39 @@
   using System.Drawing;
   using System.Web.Mvc;
 
-  using Avatarizer.Engine;
+  using Avatarizer.Generator;
 
-  public class AvatarController : Controller
+  public class UsersController : Controller
   {
     private static readonly Dictionary<int, string> FirstNames = new Dictionary<int,string>
       {
-        { 0, "Miha" },
-        { 1, "Andrej" },
-        { 2, "Andraz" },
-        { 3, "Luka" },
-        { 4, "Matjaz" }
+        { 0, "Matt" },
+        { 1, "Ben" },
+        { 2, "Nick" },
+        { 3, "Karen" },
+        { 4, "Gerry" }
       };
 
     private static readonly Dictionary<int, string> LastNames = new Dictionary<int, string>
       {
-        { 0, "Rataj" },
-        { 1, "Drobnic" },
-        { 2, "Bezek" },
-        { 3, "Por" },
-        { 4, "Skulj" }
+        { 0, "Jones" },
+        { 1, "Martin" },
+        { 2, "Smith" },
+        { 3, "Thompson" },
+        { 4, "Baley" }
       };
 
-    public FileContentResult User(int id)
+    [HttpGet]
+    public FileContentResult Avatar(int id)
     {
       id = id % 5;
 
       var firstName = FirstNames[id];
       var lastName = LastNames[id];
 
-      using (var avatarGenerator = new AvatarGenerator(firstName, lastName, this.GetAvatarOptions()))
-      {
-        var file = avatarGenerator.GetAvatar();
-        return this.File(file.Blob, file.ContentType);
-      }
+      var avatarGenerator = new AvatarFactory(firstName, lastName, this.GetAvatarOptions());
+      var file = avatarGenerator.GetAvatar();
+      return this.File(file.Blob, file.ContentType);
     }
 
     [NonAction]

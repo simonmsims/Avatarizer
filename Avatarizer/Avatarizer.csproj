@@ -11,8 +11,8 @@
     <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AvatarInitials</RootNamespace>
-    <AssemblyName>AvatarInitials</AssemblyName>
+    <RootNamespace>Avatarizer</RootNamespace>
+    <AssemblyName>Avatarizer</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
@@ -108,13 +108,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controllers\AvatarController.cs" />
+    <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Engine\AvatarGenerator.cs" />
-    <Compile Include="Engine\AvatarGeneratorAbstract.cs" />
-    <Compile Include="Engine\AvatarOptions.cs" />
-    <Compile Include="Engine\FileInfo.cs" />
-    <Compile Include="Engine\ImageFormatExtensions.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -145,6 +140,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Home\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Avatarizer.Generator\Avatarizer.Generator.csproj">
+      <Project>{1630f7b7-1115-4831-b4ec-679ae200680b}</Project>
+      <Name>Avatarizer.Generator</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
