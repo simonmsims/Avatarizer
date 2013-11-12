@@ -1,4 +1,4 @@
-﻿namespace Avatarizer
+﻿namespace Web
 {
   using System.Web.Mvc;
   using System.Web.Routing;

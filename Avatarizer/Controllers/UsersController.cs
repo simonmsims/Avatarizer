@@ -1,4 +1,4 @@
-﻿namespace Avatarizer.Controllers
+﻿namespace Web.Controllers
 {
   using System.Collections.Generic;
   using System.Drawing;

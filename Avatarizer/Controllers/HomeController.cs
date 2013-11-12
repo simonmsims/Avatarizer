@@ -1,4 +1,4 @@
-﻿namespace Avatarizer.Controllers
+﻿namespace Web.Controllers
 {
   using System.Web.Mvc;
 
