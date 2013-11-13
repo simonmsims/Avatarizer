@@ -1,12 +1,15 @@
-﻿<!DOCTYPE html>
+﻿@using System.Web.Optimization
+@using Web.App_Start
+<!DOCTYPE html>
 
 <html>
 <head>
-    <meta name="viewport" content="width=device-width" />
-    <title>@ViewBag.Title</title>
+  <meta name="viewport" content="width=device-width" />
+  <title>@ViewBag.Title</title>
+  @Styles.Render(Bundles.Css)
 </head>
 <body>
-    <div>
+    <div class="content clearfix">
         @RenderBody()
     </div>
 </body>

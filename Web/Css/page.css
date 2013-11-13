@@ -1,0 +1,23 @@
+﻿body {
+  background: #f0f0f0;
+}
+
+body > div.content {
+  background: white;
+  margin: 0px auto;
+  width: 960px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
+  padding: 40px;
+}
+
+body > div.content > img {
+  margin-right: 5px;
+  margin-bottom: 5px;
+  float: left;
+}
+
+body > div.content > div.subtext {
+  color: #7b7b7b;
+  margin-bottom: 40px;
+}

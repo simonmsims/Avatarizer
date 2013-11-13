@@ -1,5 +1,6 @@
 ﻿namespace Avatarizer
 {
+  using System;
   using System.Collections.Generic;
   using System.Drawing;
 
@@ -18,13 +19,13 @@
 
       this.Styles = new List<AvatarStyle>
         {
-          new AvatarStyle { BackgroundColor = Color.OrangeRed, TextColor = Color.White },
-          new AvatarStyle { BackgroundColor = Color.Orange, TextColor = Color.White },
-          new AvatarStyle { BackgroundColor = Color.Purple, TextColor = Color.White },
-          new AvatarStyle { BackgroundColor = Color.DarkSlateGray, TextColor = Color.White },
-          new AvatarStyle { BackgroundColor = Color.Green, TextColor = Color.White },
-          new AvatarStyle { BackgroundColor = Color.Gold, TextColor = Color.White },
-          new AvatarStyle { BackgroundColor = Color.DodgerBlue, TextColor = Color.White }
+          new AvatarStyle { BackgroundColor = this.GetHtmlColor("#2980b9"), TextColor = Color.White },
+          new AvatarStyle { BackgroundColor = this.GetHtmlColor("#27ae60"), TextColor = Color.White },
+          new AvatarStyle { BackgroundColor = this.GetHtmlColor("#e67e22"), TextColor = Color.White },
+          new AvatarStyle { BackgroundColor = this.GetHtmlColor("#f1c40f"), TextColor = Color.White },
+          new AvatarStyle { BackgroundColor = this.GetHtmlColor("#8e44ad"), TextColor = Color.White },
+          new AvatarStyle { BackgroundColor = this.GetHtmlColor("#2c3e50"), TextColor = Color.White },
+          new AvatarStyle { BackgroundColor = this.GetHtmlColor("#c0392b"), TextColor = Color.White }
         };
     }
 
@@ -42,5 +43,26 @@
     /// Gets list of possible avatar styles.
     /// </summary>
     public IList<AvatarStyle> Styles { get; private set; }
+
+    #region Private
+
+    /// <summary>
+    /// Gets color from a given html color string.
+    /// </summary>
+    /// <param name="htmlColor">Html color.</param>
+    /// <returns>Color struct.</returns>
+    private Color GetHtmlColor(string htmlColor)
+    {
+      var colorConverter = new ColorConverter();
+      var color = colorConverter.ConvertFromString(htmlColor) as Color?;
+      if (!color.HasValue)
+      {
+        throw new ArgumentException("Unable to get color from html string: " + htmlColor);
+      }
+
+      return color.Value;
+    }
+
+    #endregion
   }
 }

@@ -22,7 +22,7 @@
     /// <summary>
     /// Avatar options.
     /// </summary>
-    private readonly AvatarOptions options;
+    private readonly AvatarOptions options = new AvatarOptions();
 
     /// <summary>
     /// Generator implementation.

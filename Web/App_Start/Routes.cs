@@ -1,11 +1,11 @@
-﻿namespace Web
+﻿namespace Web.App_Start
 {
   using System.Web.Mvc;
   using System.Web.Routing;
 
-  public class RouteConfig
+  internal class Routes
   {
-    public static void RegisterRoutes(RouteCollection routes)
+    public void Register(RouteCollection routes)
     {
       routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 

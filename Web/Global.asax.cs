@@ -1,7 +1,10 @@
 ﻿namespace Web
 {
   using System.Web.Mvc;
+  using System.Web.Optimization;
   using System.Web.Routing;
+  
+  using Web.App_Start;
 
   // Note: For instructions on enabling IIS6 or IIS7 classic mode, 
   // visit http://go.microsoft.com/?LinkId=9394801
@@ -11,8 +14,9 @@
     {
       AreaRegistration.RegisterAllAreas();
 
-      FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
-      RouteConfig.RegisterRoutes(RouteTable.Routes);
+      new Filters().Register(GlobalFilters.Filters);
+      new Routes().Register(RouteTable.Routes);
+      new Bundles().Register(BundleTable.Bundles);
     }
   }
 }
