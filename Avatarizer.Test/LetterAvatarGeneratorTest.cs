@@ -22,6 +22,8 @@
       var generator = new LetterAvatarGenerator(FirstNameMock, LastNameMock, new AvatarOptions());
       var avatar = generator.GetAvatar();
       avatar.Should().NotBeNull();
+      avatar.Blob.Should().NotBeEmpty();
+      avatar.ContentType.Should().NotBeNullOrEmpty();
     }
   }
 }

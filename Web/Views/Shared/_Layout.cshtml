@@ -7,10 +7,12 @@
   <meta name="viewport" content="width=device-width" />
   <title>@ViewBag.Title</title>
   @Styles.Render(Bundles.Css)
+  @RenderSection("head")
 </head>
 <body>
-    <div class="content clearfix">
-        @RenderBody()
-    </div>
+  <div class="content clearfix">
+    <h2>@ViewBag.Title</h2>
+    @RenderBody()
+  </div>
 </body>
 </html>

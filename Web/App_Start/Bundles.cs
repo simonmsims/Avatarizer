@@ -4,7 +4,7 @@
   
   public class Bundles
   {
-    public const string Css = "~/bundles/site.css";
+    public const string Css = "~/bundles/base.css";
 
     internal void Register(BundleCollection bundles)
     {
@@ -13,7 +13,7 @@
 
     private Bundle GetCssBundle()
     {
-      return new StyleBundle(Css).Include("~/Css/*.css");
+      return new StyleBundle(Css).Include("~/Css/base.css").Include("~/Css/layout.css");
     }
   }
 }

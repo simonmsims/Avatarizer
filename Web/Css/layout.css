@@ -1,8 +1,11 @@
-﻿body {
+﻿body
+{
+  margin: 0px;
   background: #f0f0f0;
 }
 
-body > div.content {
+body > div.content
+{
   background: white;
   margin: 0px auto;
   width: 960px;
@@ -11,13 +14,8 @@ body > div.content {
   padding: 40px;
 }
 
-body > div.content > img {
-  margin-right: 5px;
-  margin-bottom: 5px;
-  float: left;
-}
-
-body > div.content > div.subtext {
+body > div.content > div.subtext
+{
   color: #7b7b7b;
   margin-bottom: 40px;
 }

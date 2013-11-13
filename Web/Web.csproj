@@ -133,7 +133,9 @@
     <Compile Include="App_Start\Filters.cs" />
     <Compile Include="App_Start\Routes.cs" />
     <Content Include="Css\base.css" />
-    <Content Include="Css\page.css" />
+    <Content Include="Css\home.css" />
+    <Content Include="Css\layout.css" />
+    <Content Include="Css\user.css" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -162,6 +164,9 @@
       <Project>{1630f7b7-1115-4831-b4ec-679ae200680b}</Project>
       <Name>Avatarizer</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\User\Index.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

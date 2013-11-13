@@ -2,6 +2,8 @@
 {
   using System;
   using System.Drawing;
+  using System.Drawing.Drawing2D;
+  using System.Drawing.Text;
   using System.Globalization;
   using System.Linq;
 
@@ -10,7 +12,7 @@
   /// </summary>
   internal class LetterAvatarGenerator : AvatarGeneratorAbstract
   {
-    #region Properties
+    #region Fields
 
     /// <summary>
     /// Avatar style.
@@ -27,7 +29,7 @@
     #region Constructors
 
     /// <summary>
-    /// Initializes a new instance of the FirstLastAvatarGenerator class.
+    /// Initializes a new instance of the LetterAvatarGenerator class.
     /// </summary>
     /// <param name="firstName">User's first name.</param>
     /// <param name="lastName">User's last name.</param>
@@ -37,6 +39,21 @@
     {
       this.text = this.GetText();
       this.style = this.GetStyle();
+    }
+
+    #endregion
+
+    #region Properties
+
+    /// <summary>
+    /// Gets a value indicating whether high quality rendering is required or not.
+    /// </summary>
+    private bool HighQualityRequired
+    {
+      get
+      {
+        return this.Options.Size.Width > 50 || this.Options.Size.Height > 50;
+      }
     }
 
     #endregion
@@ -69,23 +86,46 @@
     {
       using (var graphics = Graphics.FromImage(bitmap))
       {
+        // Use anti aliasing for high resolution avatar rendering
+        if (this.HighQualityRequired)
+        {
+          graphics.TextRenderingHint = TextRenderingHint.AntiAlias;
+          graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
+        }
+
         // Draw background ...
         using (var brush = new SolidBrush(this.style.BackgroundColor))
         {
           graphics.FillRectangle(brush, 0, 0, bitmap.Width, bitmap.Height);
         }
 
+        var rectangle = new RectangleF(0, 0, this.Options.Size.Width, this.Options.Size.Height);
+
+        var format = new StringFormat
+        {
+          LineAlignment = StringAlignment.Center,
+          Alignment = StringAlignment.Center
+        };
+
+        // Draw shadow if there is high quality rendering
+        if (this.HighQualityRequired)
+        {
+          // Draw shadow below text ...
+          using (var brush = new SolidBrush(Color.FromArgb(140, 0, 0, 0)))
+          {
+            const int ShadowSize = 1;
+            var shadowRectangle = new RectangleF(
+              rectangle.X + ShadowSize,
+              rectangle.Y + ShadowSize,
+              rectangle.Size.Width + ShadowSize,
+              rectangle.Height + ShadowSize);
+            graphics.DrawString(this.text, this.Options.Font, brush, shadowRectangle, format);
+          }
+        }
+
         // Draw text ...
         using (var brush = new SolidBrush(this.style.TextColor))
         {
-          var rectangle = new RectangleF(0, 0, this.Options.Size.Width, this.Options.Size.Height);
-
-          var format = new StringFormat
-            {
-              LineAlignment = StringAlignment.Center,
-              Alignment = StringAlignment.Center
-            };
-
           graphics.DrawString(this.text, this.Options.Font, brush, rectangle, format);
         }
       }
