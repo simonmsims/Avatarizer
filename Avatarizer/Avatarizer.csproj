@@ -44,7 +44,7 @@
     <Compile Include="AvatarFactory.cs" />
     <Compile Include="AvatarGeneratorType.cs" />
     <Compile Include="AvatarStyle.cs" />
-    <Compile Include="Engine\FirstLastAvatarGenerator.cs" />
+    <Compile Include="Engine\LetterAvatarGenerator.cs" />
     <Compile Include="Engine\AvatarGeneratorAbstract.cs" />
     <Compile Include="AvatarOptions.cs" />
     <Compile Include="Avatar.cs" />

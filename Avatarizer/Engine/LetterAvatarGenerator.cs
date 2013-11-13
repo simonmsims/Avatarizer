@@ -8,7 +8,7 @@
   /// <summary>
   /// Generates avatar with first letter of the first name and first letter of the last name.
   /// </summary>
-  internal class FirstLastAvatarGenerator : AvatarGeneratorAbstract
+  internal class LetterAvatarGenerator : AvatarGeneratorAbstract
   {
     #region Properties
 
@@ -32,7 +32,7 @@
     /// <param name="firstName">User's first name.</param>
     /// <param name="lastName">User's last name.</param>
     /// <param name="options">Additional avatar options.</param>
-    public FirstLastAvatarGenerator(string firstName, string lastName, AvatarOptions options)
+    public LetterAvatarGenerator(string firstName, string lastName, AvatarOptions options)
       : base(firstName, lastName, options)
     {
       this.text = this.GetText();

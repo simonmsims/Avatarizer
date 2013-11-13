@@ -7,19 +7,19 @@
   using Microsoft.VisualStudio.TestTools.UnitTesting;
 
   [TestClass]
-  public class FirstLastAvatarGeneratorTest : AvatarGeneratorAbstractTest
+  public class LetterAvatarGeneratorTest : AvatarGeneratorAbstractTest
   {
     [TestMethod]
     public void CreateInstanceTest()
     {
-      var generator = new FirstLastAvatarGenerator(FirstNameMock, LastNameMock, null);
+      var generator = new LetterAvatarGenerator(FirstNameMock, LastNameMock, new AvatarOptions());
       generator.Should().NotBeNull();
     }
 
     [TestMethod]
     public void GetAvatarTest()
     {
-      var generator = new FirstLastAvatarGenerator(FirstNameMock, LastNameMock, null);
+      var generator = new LetterAvatarGenerator(FirstNameMock, LastNameMock, new AvatarOptions());
       var avatar = generator.GetAvatar();
       avatar.Should().NotBeNull();
     }

@@ -60,7 +60,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="AvatarGeneratorAbstractTest.cs" />
-    <Compile Include="FirstLastAvatarGeneratorTest.cs" />
+    <Compile Include="LetterAvatarGeneratorTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

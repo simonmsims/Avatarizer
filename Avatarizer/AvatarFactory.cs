@@ -85,7 +85,7 @@
       switch (type)
       {
         case AvatarGeneratorType.FirstAndLastName:
-          return new FirstLastAvatarGenerator(this.firstName, this.lastName, this.options);
+          return new LetterAvatarGenerator(this.firstName, this.lastName, this.options);
         default:
           throw new NotImplementedException();
       }
