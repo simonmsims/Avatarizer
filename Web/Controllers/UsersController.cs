@@ -1,12 +1,11 @@
-﻿namespace Web.Controllers
+﻿namespace Avatarizer.Example.Controllers
 {
   using System;
   using System.Drawing;
   using System.Web.Mvc;
 
   using Avatarizer;
-
-  using Web.Helper;
+  using Avatarizer.Example.Helper;
 
   public class UsersController : Controller
   {

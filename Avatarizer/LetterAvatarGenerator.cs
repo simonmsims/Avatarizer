@@ -39,6 +39,15 @@
       this.style = this.GetStyle();
     }
 
+    /// <summary>
+    /// Initializes a new instance of the LetterAvatarGenerator class.
+    /// </summary>
+    /// <param name="initials">User's initials.</param>
+    public LetterAvatarGenerator(char[] initials)
+      : this(initials, new AvatarOptions())
+    {
+    }
+
     #endregion
 
     #region Properties

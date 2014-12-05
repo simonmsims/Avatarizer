@@ -1,4 +1,4 @@
-﻿namespace Web.App_Start
+﻿namespace Avatarizer.Example
 {
   using System.Web.Mvc;
 

@@ -1,4 +1,4 @@
-﻿namespace Web.Helper
+﻿namespace Avatarizer.Example.Helper
 {
   using System;
 
