@@ -1,16 +1,15 @@
-﻿namespace Avatarizer.Engine
+﻿namespace Avatarizer
 {
   using System;
   using System.Drawing;
   using System.Drawing.Drawing2D;
   using System.Drawing.Text;
-  using System.Globalization;
   using System.Linq;
 
   /// <summary>
-  /// Generates avatar with first letter of the first name and first letter of the last name.
+  /// Generates avatar with two initials.
   /// </summary>
-  internal class LetterAvatarGenerator : AvatarGeneratorAbstract
+  public class LetterAvatarGenerator : AvatarGeneratorAbstract
   {
     #region Fields
 
@@ -31,11 +30,10 @@
     /// <summary>
     /// Initializes a new instance of the LetterAvatarGenerator class.
     /// </summary>
-    /// <param name="firstName">User's first name.</param>
-    /// <param name="lastName">User's last name.</param>
+    /// <param name="initials">User's initials.</param>
     /// <param name="options">Additional avatar options.</param>
-    public LetterAvatarGenerator(string firstName, string lastName, AvatarOptions options)
-      : base(firstName, lastName, options)
+    public LetterAvatarGenerator(char[] initials, AvatarOptions options)
+      : base(initials, options)
     {
       this.text = this.GetText();
       this.style = this.GetStyle();
@@ -137,9 +135,7 @@
     /// <returns>Avatar text.</returns>
     private string GetText()
     {
-      var firstLetter = this.FirstName.Substring(0, 1).ToUpperInvariant();
-      var secondLetter = this.LastName.Substring(0, 1).ToUpperInvariant();
-      return string.Format(CultureInfo.InvariantCulture, "{0}{1}", firstLetter, secondLetter);
+      return string.Join(string.Empty, this.Initials.Take(2));
     }
     
     /// <summary>
@@ -150,8 +146,7 @@
     {
       var styles = this.Options.Styles;
 
-      var avatarText = this.GetText();
-      var characters = avatarText.ToCharArray();
+      var characters = this.text.ToCharArray();
       var sumAscii = characters.Sum(character => Convert.ToInt32(character));
 
       var index = sumAscii % styles.Count;

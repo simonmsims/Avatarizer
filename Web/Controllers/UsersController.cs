@@ -13,12 +13,8 @@
     [HttpGet]
     public FileContentResult Avatar(long id, int? width, int? height)
     {
-      // Avatarizer uses only first letter so we don't need to mock entire names
-      var generator = new RandomLetterGenerator();
-      var firstName = generator.GetRandomCharacter();
-      var lastName = generator.GetRandomCharacter();
-
-      var avatarGenerator = new AvatarFactory(firstName, lastName, this.GetAvatarOptions(width, height));
+      var initials = RandomLetterGenerator.GetRandomCharacters(2);
+      var avatarGenerator = new LetterAvatarGenerator(initials, this.GetAvatarOptions(width, height));
       var file = avatarGenerator.GetAvatar();
       return this.File(file.Blob, file.ContentType);
     }

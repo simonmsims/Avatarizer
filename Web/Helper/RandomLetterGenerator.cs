@@ -2,27 +2,22 @@
 {
   using System;
 
-  internal class RandomLetterGenerator
+  internal static class RandomLetterGenerator
   {
     private static readonly Random Random = new Random();
 
-    private const string characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    private const string Characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-    public string GetRandomCharacter()
+    internal static char[] GetRandomCharacters(int count)
     {
-      return this.GetRandomString(1);
-    }
+      var buffer = new char[count];
 
-    private string GetRandomString(int size)
-    {
-      var buffer = new char[size];
-
-      for (int i = 0; i < size; i++)
+      for (int i = 0; i < count; i++)
       {
-        buffer[i] = characters[Random.Next(characters.Length)];
+        buffer[i] = Characters[Random.Next(Characters.Length)];
       }
 
-      return new string(buffer);
+      return buffer;
     }
   }
 }

@@ -1,4 +1,4 @@
-﻿namespace Avatarizer.Engine
+﻿namespace Avatarizer
 {
   using System;
   using System.Drawing;
@@ -8,40 +8,28 @@
   /// <summary>
   /// Avatar generator abstract class.
   /// </summary>
-  internal abstract class AvatarGeneratorAbstract
+  public abstract class AvatarGeneratorAbstract
   {
     /// <summary>
     /// Initializes a new instance of the AvatarGeneratorAbstract class.
     /// </summary>
-    /// <param name="firstName">User's first name.</param>
-    /// <param name="lastName">User's last name.</param>
+    /// <param name="initials">User's initials.</param>
     /// <param name="options">Additional avatar options.</param>
-    protected AvatarGeneratorAbstract(string firstName, string lastName, AvatarOptions options)
+    protected AvatarGeneratorAbstract(char[] initials, AvatarOptions options)
     {
-      if (string.IsNullOrWhiteSpace(firstName))
+      if (initials == null)
       {
-        throw new ArgumentException("First name cannot be null or whitespace");
+        throw new ArgumentNullException("initials");
       }
-
-      if (string.IsNullOrWhiteSpace(lastName))
-      {
-        throw new ArgumentException("Last name cannot be null or whitespace");
-      }
-
-      this.FirstName = firstName;
-      this.LastName = lastName;
+      
+      this.Initials = initials;
       this.Options = options;
     }
 
     /// <summary>
     /// Gets user's first name.
     /// </summary>
-    protected string FirstName { get; private set; }
-
-    /// <summary>
-    /// Gets user's last name.
-    /// </summary>
-    protected string LastName { get; private set; }
+    protected char[] Initials { get; private set; }
 
     /// <summary>
     /// Gets avatar options.

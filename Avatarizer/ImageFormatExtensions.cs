@@ -1,4 +1,4 @@
-﻿namespace Avatarizer.Engine
+﻿namespace Avatarizer
 {
   using System.Drawing.Imaging;
   using System.Linq;

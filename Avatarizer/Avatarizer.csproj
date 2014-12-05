@@ -34,21 +34,15 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AvatarFactory.cs" />
-    <Compile Include="AvatarGeneratorType.cs" />
     <Compile Include="AvatarStyle.cs" />
-    <Compile Include="Engine\LetterAvatarGenerator.cs" />
-    <Compile Include="Engine\AvatarGeneratorAbstract.cs" />
+    <Compile Include="LetterAvatarGenerator.cs" />
+    <Compile Include="AvatarGeneratorAbstract.cs" />
     <Compile Include="AvatarOptions.cs" />
     <Compile Include="Avatar.cs" />
-    <Compile Include="Engine\ImageFormatExtensions.cs" />
+    <Compile Include="ImageFormatExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
