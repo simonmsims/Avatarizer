@@ -1,4 +1,4 @@
 Avatarizer
 ==========
 
-Generates avatars for users based on their initials.
+Generates avatars for the users based on their initials.
