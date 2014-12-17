@@ -49,22 +49,7 @@
     }
 
     #endregion
-
-    #region Properties
-
-    /// <summary>
-    /// Gets a value indicating whether high quality rendering is required or not.
-    /// </summary>
-    private bool HighQualityRequired
-    {
-      get
-      {
-        return this.Options.Size.Width > 50 || this.Options.Size.Height > 50;
-      }
-    }
-
-    #endregion
-
+    
     #region Overriden
 
     /// <summary>
@@ -94,7 +79,7 @@
       using (var graphics = Graphics.FromImage(bitmap))
       {
         // Use anti aliasing for high resolution avatar rendering
-        if (this.HighQualityRequired)
+        if (this.Options.UseHighQuality)
         {
           graphics.TextRenderingHint = TextRenderingHint.AntiAlias;
           graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
@@ -114,8 +99,8 @@
           Alignment = StringAlignment.Center
         };
 
-        // Draw shadow if there is high quality rendering
-        if (this.HighQualityRequired)
+        // Draw shadow if needed
+        if (this.Options.TextShadow)
         {
           // Draw shadow below text ...
           using (var brush = new SolidBrush(Color.FromArgb(140, 0, 0, 0)))

@@ -44,6 +44,16 @@
     /// </summary>
     public IList<AvatarStyle> Styles { get; private set; }
 
+    /// <summary>
+    /// Gets or sets a boolean flag indicating whether we should draw shadow below the text.
+    /// </summary>
+    public bool TextShadow { get; set; }
+
+    /// <summary>
+    /// Gets or sets a boolean flag indicating whether we want high quality render or not.
+    /// </summary>
+    public bool UseHighQuality { get; set; }
+
     #region Private
 
     /// <summary>
