@@ -85,13 +85,13 @@
           graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
         }
 
-        // Draw background ...
+        // Draw background
         using (var brush = new SolidBrush(this.style.BackgroundColor))
         {
           graphics.FillRectangle(brush, 0, 0, bitmap.Width, bitmap.Height);
         }
 
-        var rectangle = new RectangleF(0, 0, this.Options.Size.Width, this.Options.Size.Height);
+        var rectangle = new RectangleF(this.Options.TextMargin.X, this.Options.TextMargin.Y, this.Options.Size.Width, this.Options.Size.Height);
 
         var format = new StringFormat
         {
@@ -102,7 +102,7 @@
         // Draw shadow if needed
         if (this.Options.TextShadow)
         {
-          // Draw shadow below text ...
+          // Draw shadow below text
           using (var brush = new SolidBrush(Color.FromArgb(140, 0, 0, 0)))
           {
             const int ShadowSize = 1;
@@ -115,7 +115,7 @@
           }
         }
 
-        // Draw text ...
+        // Draw text
         using (var brush = new SolidBrush(this.style.TextColor))
         {
           graphics.DrawString(this.text, this.Options.Font, brush, rectangle, format);

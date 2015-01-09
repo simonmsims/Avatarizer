@@ -16,6 +16,7 @@
     {
       this.Size = new Size(100, 100);
       this.Font = new Font("Arial", 24, FontStyle.Bold);
+      this.TextMargin = new Point(0, 0);
 
       this.Styles = new List<AvatarStyle>
         {
@@ -53,6 +54,11 @@
     /// Gets or sets a boolean flag indicating whether we want high quality render or not.
     /// </summary>
     public bool UseHighQuality { get; set; }
+
+    /// <summary>
+    /// Gets or sets a margin for positioning the text.
+    /// </summary>
+    public Point TextMargin { get; set; }
 
     #region Private
 
