@@ -1,6 +1,7 @@
-﻿namespace Avatarizer
+﻿using System.Drawing.Imaging;
+
+namespace Avatarizer
 {
-  using System.Drawing.Imaging;
   using System.Linq;
 
   /// <summary>

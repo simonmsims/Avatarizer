@@ -1,9 +1,9 @@
-﻿namespace Avatarizer
+﻿using System.Drawing;
+
+namespace Avatarizer
 {
   using System;
-  using System.Drawing;
-  using System.Drawing.Drawing2D;
-  using System.Drawing.Text;
+ 
   using System.Linq;
 
   /// <summary>
@@ -79,11 +79,11 @@
       using (var graphics = Graphics.FromImage(bitmap))
       {
         // Use anti aliasing for high resolution avatar rendering
-        if (this.Options.UseHighQuality)
+        /*if (this.Options.UseHighQuality)
         {
           graphics.TextRenderingHint = TextRenderingHint.AntiAlias;
           graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
-        }
+        }*/
 
         // Draw background
         using (var brush = new SolidBrush(this.style.BackgroundColor))

@@ -3,11 +3,11 @@
     <TargetFramework>net45</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="Microsoft.CSharp" />
+    <PackageReference Include="CoreCompat.System.Drawing" Version="1.0.0-beta006" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
 </Project>

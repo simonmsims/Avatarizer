@@ -39,6 +39,9 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CoreCompat.System.Drawing, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c0a7ed9c2333b592, processorArchitecture=MSIL">
+      <HintPath>..\packages\CoreCompat.System.Drawing.1.0.0-beta006\lib\net45\CoreCompat.System.Drawing.dll</HintPath>
+    </Reference>
     <Reference Include="FluentAssertions">
       <HintPath>..\packages\FluentAssertions.2.1.0.0\lib\net45\FluentAssertions.dll</HintPath>
     </Reference>

@@ -1,8 +1,10 @@
-﻿namespace Avatarizer
+﻿using System.Drawing;
+
+namespace Avatarizer
 {
   using System;
   using System.Collections.Generic;
-  using System.Drawing;
+ 
 
   /// <summary>
   /// Avatar options.
